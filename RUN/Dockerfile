@@ -1,6 +1,8 @@
 FROM almalinux:9 
 RUN echo "hello world"
 RUN dnf install nginx -y
+RUN useradd naresh
+USER naresh
 COPY naresh.txt /tmp/naresh.txt
 ADD apache-tomcat-9.0.90.tar.gz /tmp
 ADD https://github.com/Nareshindu/ansible/blob/main/01-ping.yaml /tmp
